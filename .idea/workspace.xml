@@ -4,6 +4,7 @@
     <list default="true" id="4fdcc2aa-cbab-4e07-a6c2-6e0ec3c1d36d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/mongodb.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/mongodb.ejs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569882840903</updated>
       <workItem from="1569882843433" duration="37000" />
-      <workItem from="1569883509347" duration="7212000" />
+      <workItem from="1569883509347" duration="7748000" />
     </task>
     <task id="LOCAL-00001" summary="Second commit">
       <created>1569884393462</created>
@@ -96,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569904902277</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="sixth commit">
+      <created>1569905800332</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569905800332</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +127,7 @@
     <MESSAGE value="third commit" />
     <MESSAGE value="fourth commit" />
     <MESSAGE value="fifth commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="fifth commit" />
+    <MESSAGE value="sixth commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="sixth commit" />
   </component>
 </project>
