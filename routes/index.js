@@ -1,42 +1,34 @@
 var express = require('express');
-var mongodb = require('mongodb');
-var path = require('path');
 var router = express.Router();
+var MongoClient = require('mongodb').MongoClient;
 
-const PORT = process.env.PORT || 5000
-const app = express()
-
-app.use(express.static(__dirname + '/public'));
-
-const { Pool } = require('pg');
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'CSU,Eastbay' });
 });
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-
-app.get('/', function(req, res, next) {
-  res.render('pages/index', { title: 'Express' });
-});
-
-app.get('/mongodb', function(req, res, next) {
-  mongodb.MongoClient.connect('mongodb://Aishwarya:abc123@ds227808.mlab.com:27808/heroku_gb8t8mb3', function(err, client) {
+//**************************
+//*** mongodb get all of the Routes in Routes collection where frequence>=1
+//      and sort by the name of the route.  Render information in the views/pages/mongodb.ejs
+router.get('/mongodb', function (request, response, next) {
+  MongoClient.connect("mongodb://Aishwarya:abc123@ds227808.mlab.com:27808/heroku_gb8t8mb3", function(err, database) {
     if(err) throw err;
-    var db = client.db('heroku_gb8t8mb3\n');
-    var User = db.collection('User');
-    useNewUrlParser: true
+    //get collection of routes
+    const myAwesomeDB = database.db('heroku_gb8t8mb3')
+    var User = myAwesomeDB.collection('User');
+    //get all Users with frequency >=1
     User.find({ frequency : { $gte: 0 } }).sort({ name: 1 }).toArray(function (err, docs) {
       if(err) throw err;
-      res.render('pages/mongodb', {results: docs});
+
+      response.render('mongodb', {results: docs});
+
     });
-    client.close(function (err) {
-     if(err) throw err;
+
+    //close connection when your app is terminating.
+    database.close(function (err) {
+      if(err) throw err;
     });
   });//end of connect
 });//end app.get
-app.listen(PORT, function() {
-  console.log(`Listening on Port ${PORT}`);
-});
+
+module.exports = router;
