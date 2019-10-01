@@ -1,5 +1,3 @@
-import * as mongodb from "mongodb";
-
 var express = require('express');
 var router = express.Router();
 
