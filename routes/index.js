@@ -15,9 +15,9 @@ router.get('/mongodb', function (request, response, next) {
     if(err) throw err;
     //get collection of routes
     const myAwesomeDB = database.db('heroku_gb8t8mb3')
-    var User = myAwesomeDB.collection('User');
-    //get all Users with frequency >=1
-    User.find({ frequency : { $gte: 0 } }).sort({ name: 1 }).toArray(function (err, docs) {
+    var Routes = myAwesomeDB.collection('Routes');
+    //get all Routes with frequency >=1
+    Routes.find({ frequency : { $gte: 0 } }).sort({ name: 1 }).toArray(function (err, docs) {
       if(err) throw err;
 
       response.render('mongodb', {results: docs});
