@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 //*** mongodb get all of the Routes in Routes collection where frequence>=1
 //      and sort by the name of the route.  Render information in the views/pages/mongodb.ejs
 router.get('/mongodb', function (request, response, next) {
-  MongoClient.connect("mongodb://Aishwarya:abc123@ds227808.mlab.com:27808/heroku_gb8t8mb3", function(err, database) {
+  MongoClient.connect("mongodb://Aishu:abc123@ds227808.mlab.com:27808/heroku_gb8t8mb3", function(err, database) {
     if(err) throw err;
     //get collection of routes
     const myAwesomeDB = database.db('heroku_gb8t8mb3')
